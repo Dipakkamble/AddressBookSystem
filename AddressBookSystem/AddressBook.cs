@@ -72,7 +72,7 @@ namespace AddressBookSystem
             DisplayContact();
             Console.WriteLine("\nTo Edit Contact Enter First Name\n");
             string name = Console.ReadLine();
-            foreach (var data in contactList)
+            foreach (Contact data in contactList)
             {
                 if (data.fName == name)
                 {
@@ -125,8 +125,31 @@ namespace AddressBookSystem
                 }
             }
         }
+            
+            public void DeleteContact()
+            {
+                DisplayContact();           
+                Console.WriteLine("\nEnter the First name to delete the contact ");
+                string name = Console.ReadLine();
+            foreach (Contact data in contactList)
+            {
+                    if (data.fName == name)
+                    {
+                        contactList.Remove(data);
+                        Console.WriteLine("Contact deleted successfully...!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact is not present");
+                    }
+            }
+            }
 
-            public void DisplayContact()
+        
+
+
+
+        public void DisplayContact()
             {
                 AddContact();
                 foreach (Contact data in contactList)

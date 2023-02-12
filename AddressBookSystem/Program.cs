@@ -13,7 +13,7 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Welcome to address book system");
             Console.WriteLine("Enter the number from below option");
-            Console.WriteLine("1:Crea te conatct\n2:Add contact\n3:Display contact\n4:Edit Conatct");
+            Console.WriteLine("1:Crea te conatct\n2:Add contact\n3:Display contact\n4:Edit Conatct\n5:Delete contact");
             int option =Convert.ToInt32(Console.ReadLine());
             AddressBook addressBook = new AddressBook();
             switch (option) 
@@ -29,7 +29,10 @@ namespace AddressBookSystem
                     break;
                 case 4:
                     addressBook.EditContact();
-                    break; 
+                    break;
+                case 5:
+                    addressBook.DeleteContact();
+                    break;
             }
             
             Console.ReadLine();
